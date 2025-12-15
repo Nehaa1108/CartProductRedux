@@ -1,38 +1,44 @@
+import { useDispatch } from "react-redux";
+
+import { addItem } from "../Service/Slice";
+
 const Product = ()=>
 {
+
+  const dispatch = useDispatch()
   return (
-    <div class="product-container">
+    <div className="product-container">
 
    
-    <div class="product-image">
+    <div className="product-image">
         <img src="https://www.theaudiostore.in/cdn/shop/files/sony-wh-ch720n-noise-canceling-wireless-headphones-black-43220896874751.webp?v=1744396394&width=1000" alt="Product"/>
     </div>
 
   
-    <div class="product-info">
+    <div className="product-info">
         <h1>Wireless Headphones</h1>
-        <p class="price">₹2,999</p>
+        <p className="price">₹2,999</p>
 
-        <p class="description">
+        <p className="description">
             High-quality wireless headphones with noise cancellation,
             long battery life, and premium sound.
         </p>
 
       
-        <div class="rating">
+        <div className="rating">
             ⭐⭐⭐⭐☆ <span>(120 Reviews)</span>
         </div>
 
       
-        <div class="quantity">
+        <div className="quantity">
             <label>Quantity:</label>
-            <input type="number"  min="0"/>
+            <input type="number"  />
         </div>
 
       
-        <div class="actions">
-            <button class="add-cart">Add to Cart</button>
-            <button class="buy-now">Buy Now</button>
+        <div className="actions">
+            <button onClick={()=>dispatch(addItem(1))} className="add-cart">Add to Cart</button>
+            <button className="buy-now">Buy Now</button>
         </div>
     </div>
 

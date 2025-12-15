@@ -3,10 +3,10 @@ import AddToCart from "./AddToCart";
 const Header =()=>
 {
   return (
-<header class="header">
-    <div class="logo">MyShop</div>
+<header className="header">
+    <div className="logo">MyShop</div>
 
-    <nav class="nav">
+    <nav className="nav">
         <a href="#">Home</a>
         <a href="#">Shop</a>
         <a href="#">About</a>

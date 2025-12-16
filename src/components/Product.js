@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 
-import { addItem } from "../Service/Slice";
+import { addItem, removeItem } from "../Service/Slice";
 
 const Product = ()=>
 {
@@ -38,6 +38,7 @@ const Product = ()=>
       
         <div className="actions">
             <button onClick={()=>dispatch(addItem(1))} className="add-cart">Add to Cart</button>
+            <button onClick={()=>dispatch(removeItem(1))} className="remove-cart">Remove to Cart</button>
             <button className="buy-now">Buy Now</button>
         </div>
     </div>

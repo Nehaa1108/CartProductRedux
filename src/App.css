@@ -130,3 +130,25 @@ body {
 .actions button:hover {
     opacity: 0.9;
 }
+
+.remove-cart {
+    background-color: #e63946;
+    color: #fff;
+    margin-right: 10px;
+}
+
+
+.remove-cart:hover {
+    background-color: #a20d1a;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.btn-clear{
+    background-color: rgba(36, 36, 250, 0.745);
+    color: #fff;
+}
+.btn-clear:hover{
+    background-color: rgba(11, 11, 175, 0.745);
+    color: #fff;
+}

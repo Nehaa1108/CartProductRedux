@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import './style.css'
 
-// (e.g., Local Time, UTC, GMT+1,
-// EST, PST).
+// (e.g., Local Time, UTC, GMT+1, EST, PST)
 
 const timeZone = [
   { label: 'Local Time', value: 'local' },
-  { label: 'UTC', value: 'utc' },
-  { label: 'GMT+1', value: 'gmt' },
-  { label: 'EST', value: 'est' },
-  { label: 'PST', value: 'pst' }
+  { label: 'UTC', value: 'UTC' },
+  { label: 'GMT+1', value: 'Etc/GMT-1' },
+  { label: 'EST', value: 'America/New_York' },
+  { label: 'PST', value: 'America/Los_Angeles' }
 ]
 
 const Clock = () => {
-
   const [time, setTimewise] = useState({
     hours: 0,
     minutes: 0,
@@ -27,9 +25,7 @@ const Clock = () => {
   }
 
   useEffect(() => {
-
     const dropdownzonetick = () => {
-
       if (zonewise === 'local') {
         const now = new Date()
         setTimewise({
@@ -38,23 +34,19 @@ const Clock = () => {
           seconds: now.getSeconds()
         })
       } else {
+        const formatter = new Intl.DateTimeFormat('en-US', {
+          timeZone: zonewise,
+          hour: 'numeric',
+          minute: 'numeric',
+          second: 'numeric',
+          hour12: false
+        })
 
-        const notindropdownformatt = new Intl.DateTimeFormat(
-          'en-US',
-          {
-            timeZone: zonewise,
-            hour: 'numeric',
-            minute: 'numeric',
-            second: 'numeric',
-            hour12: false
-          }
-        )
-
-        const formatpart = notindropdownformatt.formatToParts(new Date())
+        const parts = formatter.formatToParts(new Date())
         const values = {}
 
-        formatpart.forEach(key => {
-          values[key.type] = Number(key.value)
+        parts.forEach(part => {
+          values[part.type] = Number(part.value)
         })
 
         setTimewise({
@@ -66,10 +58,9 @@ const Clock = () => {
     }
 
     dropdownzonetick()
-    const timeinterval = setInterval(dropdownzonetick, 1000)
+    const interval = setInterval(dropdownzonetick, 1000)
 
-    return () => clearInterval(timeinterval)
-
+    return () => clearInterval(interval)
   }, [zonewise])
 
   const secondzonewise = time.seconds * 6
@@ -85,22 +76,19 @@ const Clock = () => {
         value={zonewise}
         onChange={handleChange}
       >
-        {timeZone.map(time => (
-          <option key={time.value} value={time.value}>
-            {time.label}
+        {timeZone.map(t => (
+          <option key={t.value} value={t.value}>
+            {t.label}
           </option>
         ))}
       </select>
 
       <div className="clock">
-        {[...Array(12)].map((_, i) => {
-          const timeangle = i + 1
-          return (
-            <div key={timeangle} className="number">
-              {timeangle}
-            </div>
-          )
-        })}
+        {[...Array(12)].map((_, i) => (
+          <div key={i} className="number">
+            {i + 1}
+          </div>
+        ))}
 
         <div
           className="hand hour"

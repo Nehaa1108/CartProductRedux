@@ -41,4 +41,18 @@ export const deleteContact = async (id) => {
 
 
 
+export const updateContact = async (updatedContact) => {
+  const data = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+
+  const updated = data.map((c) =>
+    c.id === updatedContact.id ? updatedContact : c
+  );
+
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+  return updated;
+};
+
+
+
+
 

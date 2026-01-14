@@ -33,6 +33,8 @@ const Navbar = () => {
           <li><Link to="/about">About</Link></li>
           <li><Link to="/projects">Projects</Link></li>
           <li><Link to="/contact">Contact</Link></li>
+          <li><Link to="/projects-list">Project List</Link></li>
+          <li><Link to="/contact-list">Contact List</Link></li>
         </ul>
         <div className="flex items-center gap-4">
  

@@ -1,9 +1,10 @@
 import { useState } from "react";
 
-export const UseLocalStorage = (key, initialValue) => {
+export const useLocalStorage = (key, initialValue) => {
   const [value, setValue] = useState(() => {
     const stored = localStorage.getItem(key);
     return stored ? JSON.parse(stored) : initialValue;
+    console.log(stored)
   });
 
   const updateValue = (newValue) => {

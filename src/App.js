@@ -20,7 +20,7 @@ function AppContent() {
     <>
       <Navbar />
 
-      {/* Page Transitions */}
+    
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
@@ -31,10 +31,11 @@ function AppContent() {
           <Route path="/add-project" element={<AddProject />} />
         <Route path="/projects-list" element={<ProjectList />} />
         </Routes>
+         <ScrollToTop />
       </AnimatePresence>
 
-      {/* Scroll to top button */}
-      <ScrollToTop />
+    
+     
 
       <Footer />
     </>

@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-
+import "tabulator-tables/dist/css/tabulator.min.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
@@ -14,6 +14,9 @@ import AddProject from "./pages/AddProject";
 import ProjectList from "./pages/ProjectList";
 import { Toaster } from "react-hot-toast";
 import ContactAdmin from "./pages/ContactAdmin";
+import BasicTable from "./pages/BasicTable";
+
+
 function AppContent() {
   const location = useLocation();
 
@@ -37,7 +40,7 @@ function AppContent() {
           <Route path="/add-project" element={<AddProject />} />
         <Route path="/projects-list" element={<ProjectList />} />
          <Route path="/contact-list" element={<ContactAdmin />} />
-         
+         <Route path="/basetable" element={<BasicTable />}
         </Routes>
          <ScrollToTop />
       </AnimatePresence>

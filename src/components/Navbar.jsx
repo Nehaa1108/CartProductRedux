@@ -35,6 +35,7 @@ const Navbar = () => {
           <li><Link to="/contact">Contact</Link></li>
           <li><Link to="/projects-list">Project List</Link></li>
           <li><Link to="/contact-list">Contact List</Link></li>
+          <li><Link to="/basetable">BaseTable tabulator</Link></li>
         </ul>
         <div className="flex items-center gap-4">
  

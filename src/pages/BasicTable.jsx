@@ -49,6 +49,7 @@ const BasicTable = () => {
 options={{
   movableRows: true,
   movableColumns: true,
+  
 }}
       />
     </div>

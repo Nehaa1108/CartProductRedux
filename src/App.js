@@ -40,7 +40,7 @@ function AppContent() {
           <Route path="/add-project" element={<AddProject />} />
         <Route path="/projects-list" element={<ProjectList />} />
          <Route path="/contact-list" element={<ContactAdmin />} />
-         <Route path="/basetable" element={<BasicTable />}
+         <Route path="/basetable" element={<BasicTable />} />
         </Routes>
          <ScrollToTop />
       </AnimatePresence>

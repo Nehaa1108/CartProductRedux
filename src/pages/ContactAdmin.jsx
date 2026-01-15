@@ -11,7 +11,7 @@ import toast from "react-hot-toast";
 
 const ContactAdmin = () => {
   const queryClient = useQueryClient();
-  const isAdmin = true; // 🔐 ADMIN ONLY
+  const isAdmin = true; 
 
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
